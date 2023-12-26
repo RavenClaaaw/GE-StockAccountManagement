@@ -87,4 +87,16 @@ public class StockAccount {
         System.out.println("AVAILABLE STOCKS:- ");
         System.out.println(companySharesMap.keySet());
     }
+
+    public double valueOf(){
+        double totalValue = 0;
+
+        for (CompanyShares companyShares : companySharesMap.values()) {
+            double value = companyShares.numShares * companyShares.sharePrice;
+            totalValue += value;
+        }
+        System.out.printf("\nTotal Value: Rs %.2f\n", totalValue);
+
+        return totalValue;
+    }
 }
